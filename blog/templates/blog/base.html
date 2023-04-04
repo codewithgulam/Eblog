@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} HOME {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    jQuery library
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+    <style>
+      @media only screen and (min-width: 576px) {
+        .card {
+          max-width: 20rem;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .card {
+          max-width: 22rem;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .card {
+          max-width: 24rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">My E-Blog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cr' %}">Create Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">About</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="">Hello! {{user}}</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'out' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{% url 'in' %}">LogIn</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+  </body>
+</html>

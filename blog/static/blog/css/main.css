@@ -1,0 +1,45 @@
+.cont2 {
+    max-width: 1250px;
+}
+
+.container {
+    max-width: 500px;
+    border: 2px solid;
+    /* display: inline; */
+    /* adjust as needed */
+}
+
+.align-left {
+    float: left;
+    margin-right: 20px;
+    /* adjust as needed */
+}
+
+.fit-image {
+    /* max-width: 100px; */
+    /* set a fixed width of 300px for the image */
+    height: auto;
+}
+
+h2 {
+    font-size: 28px;
+    /* adjust as needed */
+    margin-top: 0;
+}
+
+button {
+    display: inline-block;
+    background-color: #ce1010;
+    /* adjust as needed */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    /* adjust as needed */
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    font-size: 14px;
+    /* adjust as needed */
+}

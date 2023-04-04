@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %} {% block content %} {% for obj in object %}
+
+<!-- <div class="card mb-3 border border-primary rounded" style="max-width: 18rem; border: 1px solid !important;;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="/media/{{obj.img}}" style="max-height: 200px; width: 100%;" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title">{{obj.title}}</h2>
+                <p class="card-text ">{{obj.desc | truncatechars:150}}</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated {{obj.updated}}</small></p>
+                <a href="{% url 'viewblog' id=obj.id %}" class="btn btn-primary">Read More >></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->
+
+<div class="card d-inline-block m-3 p-2" style="max-width: 18rem;">
+    <img src="/media/{{obj.img}}" class="card-img-top" alt="..." style="max-height: 200px; width: 100%; object-fit: cover;">
+    <div class="card-body">
+        <h5 class="card-title">{{obj.title}}</h5>
+        <p class="card-text">{{obj.desc | truncatechars:150}} </p>
+        <p class="card-text"><small class="text-body-secondary">Last updated {{obj.updated}}</small></p>
+
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <a href="{% url 'viewblog' id=obj.id %}" class="btn btn-primary">Read More >></a>
+        <a href="{% url 'up' id=obj.id %}" class="btn btn-primary">update</a>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endfor %} {% endblock content %}
