@@ -70,7 +70,7 @@ def admin_login(request):
 
 def admin_logout(request):
     logout(request)
-    return redirect('/')
+    return redirect('/login')
 
 
 def register(request):
@@ -84,3 +84,10 @@ def register(request):
     else:
         fm = UserCreationForm()
     return render(request, 'blog/register.html', {'form': fm})
+
+
+def deletePost(request, id):
+    blog = Post.objects.get(id=id)
+    blog.delete()
+    return redirect('/')
+    

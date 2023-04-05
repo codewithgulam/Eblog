@@ -26,7 +26,8 @@
 
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         <a href="{% url 'viewblog' id=obj.id %}" class="btn btn-primary">Read More >></a>
-        <a href="{% url 'up' id=obj.id %}" class="btn btn-primary">update</a>
+        <a href="{% url 'up' id=obj.id %}" class="btn btn-primary">Update</a>
+        <a href="{% url 'del' id=obj.id %}" class="btn btn-danger">Delete</a>
 
     </div>
 </div>
