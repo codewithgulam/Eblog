@@ -1,9 +1,31 @@
-{% extends 'blog/base.html' %}
-{% block title %}{{object.title}}{% endblock title %}
-{% block content %} 
-<form method="post">
-    {% csrf_token %}
-    <p>{{form.as_p}}</p>
-    <input type="submit">
-</form>
+{% extends 'blog/base.html' %} {% block title %}{{object.title}}{% endblock title %} {% block content %}
+{% comment %} <div class="row ">
+    <div class="col-sm-4">
+        
+        {% if messages %} {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{message.tags}} {{message.tags}} alert-dismissible fade show" role="alert" {% endif %}>
+
+            <strong>Hurruh!! </strong>{{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        </div>
+        {% endfor %} {% endif %}
+
+    </div> {% endcomment %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        <p>{{form.as_p}}</p>
+        <input type="submit"> {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+    </form>
+</div>
+
+
 {% endblock content %}

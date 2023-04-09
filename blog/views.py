@@ -80,7 +80,7 @@ def register(request):
             fm.save()
             username = fm.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('home')
+            return redirect('/login')
     else:
         fm = UserCreationForm()
     return render(request, 'blog/register.html', {'form': fm})
@@ -91,3 +91,5 @@ def deletePost(request, id):
     blog.delete()
     return redirect('/')
     
+
+

@@ -1,9 +1,11 @@
+{% extends 'blog/base.html' %}
 {% block content %}
 
 <div class="row">
     <div class="col-sm-8 offset-2">
-        <h4 class="alert alert-info">Blog Update Request</h4>
-        <form action="" method="post" enctype="multipart/form-data">
+        <h2 class='text-center'>Update the blog</h2>
+        
+        <form class=" form-control form-control-lg " action="" method="post" enctype="multipart/form-data">
             {% csrf_token %} {{form.as_p}}
             <input type="submit" class="btn btn-success">
             <a class="btn btn-primary" href="/">Back To Home</a>
@@ -11,5 +13,3 @@
     </div>
 </div>
 {% endblock content %}
-
-

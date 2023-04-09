@@ -1,14 +1,15 @@
 {% extends 'blog/base.html' %} {% block content %}
-<div class="container mt-5 ">
-    <h1>Login Here</h1>
-    <form method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <span class="my-2 mx-2"> <button class="btn btn-primary " type="submit">Login</button>
-            <a href="{% url 'register'  %}" class="btn btn-danger">Register</a>
+<div class="row d-flex" style="min-height:400px ; min-width: 50%;">
+    <div class="col-sm-4 m-auto border-dark border rounded p-3">
+
+        <h1>Login Here</h1>
+        <form class="" method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <span class="my-2 mx-2 "> <button class="btn btn-primary px-4 " type="submit">Login</button>
+            <a href="{% url 'register'  %}" class="btn btn-secondary px-4">Register</a>
         </span>
-    </form>
-
-
+        </form>
+    </div>
 
 </div>
 {% endblock %}
