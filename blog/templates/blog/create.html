@@ -1,12 +1,17 @@
 {% extends 'blog/base.html' %} {% block content %}
 
-<h1>Add blogs here! </h1>
-<form class="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-control">
-        <p>{{form.as_p}}</p>
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <h2 class='text-center'>Add the blog</h2>
+        <form class="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-control form-control-sm">
+                <p>{{form.as_p}}</p>
 
-        <input type="submit">
+                <input class="btn btn-success px-4" type="submit" value="Add">
+                <a class="btn btn-primary" href="/">Back To Home</a>
+
+            </div>
+        </form>
     </div>
-</form>
-{% endblock content %}
+    {% endblock content %}
